@@ -7,15 +7,26 @@
 //
 
 #import "AppDelegate.h"
+#import "MoviesViewController.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
+    
+    MoviesViewController *mvc = [[MoviesViewController alloc] init];
+    UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:mvc];
+    self.window.rootViewController = nvc;
+    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    
+    NSURLCache *sharedCache = [[NSURLCache alloc] initWithMemoryCapacity:2 * 1024 * 1024
+                                                            diskCapacity:100 * 1024 * 1024
+                                                                diskPath:nil];
+    [NSURLCache setSharedURLCache:sharedCache];
+    
     return YES;
 }
 
