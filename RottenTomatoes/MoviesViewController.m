@@ -22,6 +22,8 @@
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *viewActivity;
 
 @property (nonatomic, retain) UIRefreshControl *refreshControl;
+@property (weak, nonatomic) IBOutlet UILabel *lblNetwork;
+
 @end
 
 @implementation MoviesViewController
@@ -59,6 +61,8 @@
             [self.tblView reloadData];
         }
         
+        self.lblNetwork.hidden = (connectionError == nil);
+        
         [self.viewActivity stopAnimating];
     }];
     
@@ -92,6 +96,8 @@
             self.arrMovies = object[@"movies"];
             [self.tblView reloadData];
         }
+        
+        self.lblNetwork.hidden = (connectionError == nil);
         
         [self.viewActivity stopAnimating];
         [refreshControl endRefreshing];
@@ -136,7 +142,8 @@
         //NSLog(@"%@", object);
         
         if(data != nil)
-            mCell.imgView.image = [UIImage imageWithData:data];    }];
+            mCell.imgView.image = [UIImage imageWithData:data];    
+    }];
     
     return mCell;
 }

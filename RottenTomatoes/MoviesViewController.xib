@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MoviesViewController">
             <connections>
+                <outlet property="lblNetwork" destination="IEa-10-F91" id="dbG-ZQ-7t8"/>
                 <outlet property="tblView" destination="eoH-s2-O18" id="nQV-30-yDb"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="viewActivity" destination="J3v-bm-33i" id="mjU-ps-I10"/>
@@ -21,9 +22,16 @@
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </tableView>
                 <activityIndicatorView appearanceType="aqua" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="J3v-bm-33i">
-                    <rect key="frame" x="150" y="256" width="20" height="20"/>
+                    <rect key="frame" x="150" y="274" width="20" height="20"/>
                     <color key="backgroundColor" red="0.0" green="0.68903519209999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                 </activityIndicatorView>
+                <label hidden="YES" appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Network Error" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IEa-10-F91">
+                    <rect key="frame" x="79" y="113" width="163" height="39"/>
+                    <color key="backgroundColor" red="1" green="0.87534964861759812" blue="0.84923345429986385" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="1" green="0.0" blue="0.035351606611023989" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
